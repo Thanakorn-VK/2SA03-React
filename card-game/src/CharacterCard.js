@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
 
-componentDidupdate(prevProps){
-    if(prevProps.attempt != this.props.attempt){
-        this.setState({active: false})
-    }
-}
+
 
 export default class CharacterCard extends Component {
     constructor(props){
@@ -29,6 +25,11 @@ export default class CharacterCard extends Component {
             </div>
         )
     }
-    
+
+    componentDidupdate(prevProps){
+        if(prevProps.attempt != this.props.attempt){
+            this.setState({active: false})
+        }
+    }
 }
 
