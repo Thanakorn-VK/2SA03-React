@@ -25,11 +25,12 @@ export default class CharacterCard extends Component {
             </div>
         )
     }
-
+    /*
     componentDidupdate(prevProps){
         if(prevProps.attempt != this.props.attempt){
             this.setState({active: false})
         }
     }
+    */
 }
 
