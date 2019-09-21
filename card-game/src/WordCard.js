@@ -40,6 +40,9 @@ export default class WordCard extends Component {
                     attempt={this.state.attempt}
                     activationHandler={this.activationHandler}/>)
                 }
+                <h1>Round : {this.state.attempt}</h1>
+                <h1>{this.state.completed? "YOU WON!" : ""}</h1>
+
             </div>
         );
     }
