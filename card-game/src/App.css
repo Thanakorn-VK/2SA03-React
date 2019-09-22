@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+.setcenter {
+  text-align: center;
+}
 .button1 {
   background-color: #F7DC6F;
   border: none;
@@ -41,6 +43,8 @@
   cursor: pointer;
 }
 .card {
+  color: white;
+  background-color: #5499C7;
   display: inline-block;
   text-align: center;
   width: 3em;
@@ -51,8 +55,8 @@
 }
 
 .activeCard {
-  color: red;
-  background: pink;
+  color: rgb(145, 145, 145);
+  background: rgb(53, 97, 126);
 }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
