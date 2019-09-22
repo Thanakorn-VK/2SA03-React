@@ -24,14 +24,18 @@ export default class WordCard extends Component {
     activationHandler = (c) => {
         let guess = [...this.state.guess, c]
         this.setState({guess})
-        if(guess.length == this.state.chars.length){
+        
+        if((guess.length == this.state.chars.length) && !(this.state.playmax == this.state.attempt)){
+        //if((guess.length == this.state.chars.length)){
             if(guess.join('').toString() == this.state.word){
                 this.setState({guess: [], completed: true})
             }else{
-                this.setState({guess: [], attempt: this.state.attempt + 1})
-                if(this.state.attempt == 3){
+                if(this.state.attempt == 5){
                     this.setState({guess: [], check: true})
                     this.setState({guess: [], completed: true})
+                }
+                else{
+                    this.setState({guess: [], attempt: this.state.attempt + 1})
                 }
             }
         }
@@ -49,8 +53,6 @@ export default class WordCard extends Component {
                 <h1>Round : {this.state.attempt}</h1>
                 <h1>{this.state.completed==!this.state.check? "YOU WON!" : ""}</h1>
                 <h1>{this.state.check? "YOU LOSE!" : ""}</h1>
-                
-
             </div>
         );
     }
