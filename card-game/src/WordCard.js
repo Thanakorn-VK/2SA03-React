@@ -10,7 +10,8 @@ const prepareStateFromWord = (given_word) => {
         chars, 
         attempt: 1,
         guess: [],
-        completed: false
+        completed: false,
+        check: false // false to your win
     }
 }
 
@@ -28,6 +29,10 @@ export default class WordCard extends Component {
                 this.setState({guess: [], completed: true})
             }else{
                 this.setState({guess: [], attempt: this.state.attempt + 1})
+                if(this.state.attempt == 3){
+                    this.setState({guess: [], check: true})
+                    this.setState({guess: [], completed: true})
+                }
             }
         }
     }
@@ -40,8 +45,11 @@ export default class WordCard extends Component {
                     attempt={this.state.attempt}
                     activationHandler={this.activationHandler}/>)
                 }
+
                 <h1>Round : {this.state.attempt}</h1>
-                <h1>{this.state.completed? "YOU WON!" : ""}</h1>
+                <h1>{this.state.completed==!this.state.check? "YOU WON!" : ""}</h1>
+                <h1>{this.state.check? "YOU LOSE!" : ""}</h1>
+                
 
             </div>
         );
