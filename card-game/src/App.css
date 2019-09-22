@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+.h1 {
+  color: #949494;
+}
 .setcenter {
   text-align: center;
 }
