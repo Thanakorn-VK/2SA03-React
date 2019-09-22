@@ -30,7 +30,7 @@ export default class WordCard extends Component {
             if(guess.join('').toString() == this.state.word){
                 this.setState({guess: [], completed: true})
             }else{
-                if(this.state.attempt == 5){
+                if(this.state.attempt == 5){ // 5 is a playmax in game 
                     this.setState({guess: [], check: true})
                     this.setState({guess: [], completed: true})
                 }
